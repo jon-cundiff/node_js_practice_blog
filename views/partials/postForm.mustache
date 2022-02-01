@@ -1,0 +1,17 @@
+<form method="POST" action="{{postUrl}}" id="postForm">
+    <div class="form-item">
+        <label for="title">Post Title</label>
+        <input type="text" name="title" value="{{title}}" required>
+    </div>
+    <div class="form-item">
+        <label for="body">Post Body</label>
+        <input type="text" name="body" value="{{body}}" required>
+    </div>
+    <div class="form-item publish">
+        <label for="publish">Publish? </label>
+        <input type="checkbox" {{#isPublished}}checked{{/isPublished}} name="publish">
+    </div>
+    <button class="btn submit">
+    {{ buttonLabel }}
+    Post</button>
+</form>

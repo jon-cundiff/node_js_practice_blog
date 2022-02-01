@@ -1,0 +1,43 @@
+#header {
+    display: flex;
+    column-gap: 1.5em;
+}
+
+#postForm,
+.form-item,
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+#newPostForm {
+    row-gap: 1em;
+}
+
+.form-item.publish {
+    flex-direction: row;
+}
+
+.btn {
+    padding: 10px;
+}
+
+.submit {
+    background-color: greenyellow;
+}
+
+#postsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+}
+
+.post-container {
+    padding: 1em;
+    box-shadow: 1px 1px 10px rgba(10, 10, 10, 0.6);
+}
+
+.post-container h4 span {
+    font-size: 0.7em;
+    font-style: italic;
+}

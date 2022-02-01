@@ -1,0 +1,17 @@
+<div id="postsContainer">
+    {{# posts }}
+        <div class="post-container">
+            <h4>{{title}} <span>{{date_created}}</span></h4>
+            <p>{{body}}</p>
+            {{#edit}}
+            <div class="edit">
+                <a href="/posts/{{post_id}}/edit">Edit Post</a>
+                <a href="/posts/{{post_id}}/delete">Delete Post</a>
+            </div>
+            {{/edit}}
+        </div>
+    {{/ posts}}
+    {{^ posts}}
+        <h3>No posts available.</h3>
+    {{/ posts}}
+</div>
