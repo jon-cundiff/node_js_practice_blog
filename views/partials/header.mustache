@@ -1,5 +1,13 @@
 <header id="header">
     <a href="/">Home</a>
-    <a href="/new-post">New Post</a>
-    <a href="/my-posts">My Posts</a>
+    {{# username }}
+    <a href="/posts/new-post">New Post</a>
+    <a href="/posts/my-posts">My Posts</a>
+    <span class="end-start">{{username}}</span>
+    <a href="/logout"">Log Out</a>
+    {{/ username }}
+    {{^ username }}
+        <a href="/login" class="end-start">Log In</a>
+        <a href="/signup">Sign Up</a>
+    {{/ username }}
 </header>

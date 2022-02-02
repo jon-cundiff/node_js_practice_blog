@@ -3,6 +3,7 @@
         <div class="post-container">
             <h4>{{title}} <span>{{date_created}}</span></h4>
             <p>{{body}}</p>
+            <a href="/posts/{{post_id}}">{{comment_count}} comments</a>
             {{#edit}}
             <div class="edit">
                 <a href="/posts/{{post_id}}/edit">Edit Post</a>

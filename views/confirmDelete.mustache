@@ -9,14 +9,15 @@
 </head>
 <body>
     {{> partials/header}}
-    <h1>Blog Posts</h1>
-    <form method="POST" action="/posts/{{postId}}/delete" class="form">
-        <h3>Deleting post "{{title}}"</h3>
-        <div>
-            <label for="checkbox">Confirm Delete? <i>This cannot be undone.</i></label>
-            <input type="checkbox" name="delete" required>
-        </div>
-        <button class="btn submit">Delete Post</button>
-    </form>
+    <div id="container">
+        <form method="POST" action="/posts/{{postId}}/delete" class="form">
+            <h3>Deleting post "{{title}}"</h3>
+            <div>
+                <label for="checkbox">Confirm Delete? <i>This cannot be undone.</i></label>
+                <input type="checkbox" name="delete" required>
+            </div>
+            <button class="btn submit">Delete Post</button>
+        </form>
+    </div>
 </body>
 </html>

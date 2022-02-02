@@ -1,16 +1,56 @@
-#header {
-    display: flex;
-    column-gap: 1.5em;
+* {
+    box-sizing: border-box;
 }
 
-#postForm,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+#header {
+    display: flex;
+    padding: 1em 2em;
+    column-gap: 1.5em;
+    background-color: rgba(255, 255, 200, 0.7);
+    box-shadow: 0 0 10px rgba(10, 10, 10, 0.6);
+}
+
+.end-start {
+    margin-left: auto;
+}
+
+.error {
+    border: 2px solid red;
+    padding: 1em;
+    border-radius: 20px;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.form,
 .form-item,
-.form {
+.comment,
+#comments {
     display: flex;
     flex-direction: column;
 }
 
-#newPostForm {
+#newCommentForm {
+    flex-direction: row;
+    column-gap: 1em;
+}
+
+#newCommentForm .form {
+    row-gap: 0.5em;
+}
+
+.form,
+.comment,
+#comments {
     row-gap: 1em;
 }
 
@@ -24,6 +64,14 @@
 
 .submit {
     background-color: greenyellow;
+}
+
+.danger {
+    background-color: red;
+}
+
+#container {
+    padding: 1em 2em;
 }
 
 #postsContainer {
@@ -40,4 +88,23 @@
 .post-container h4 span {
     font-size: 0.7em;
     font-style: italic;
+}
+
+#comments {
+    margin-top: 2em;
+}
+
+.comment {
+    box-shadow: 2px 2px 12px rgba(10, 10, 10, 0.6);
+    padding: 1.5em;
+}
+
+.title {
+    display: flex;
+    column-gap: 2em;
+    align-items: flex-end;
+}
+
+.title > * {
+    margin: 0;
 }

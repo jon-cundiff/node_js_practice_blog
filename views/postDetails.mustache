@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Blog App - Post Details</title>
+</head>
+<body>
+    {{> partials/header}}
+    <div id="container">
+        <h1>{{ post.post_user }}'s post</h1>
+        <div id="postsContainer">
+            <div class="post-container">
+                <h4>{{post.title}} <span>{{post.date_created}}</span></h4>
+                <p>{{post.body}}</p>
+                {{#edit}}
+                <div class="edit">
+                    <a href="/posts/{{post.post_id}}/edit">Edit Post</a>
+                    <a href="/posts/{{post.post_id}}/delete">Delete Post</a>
+                </div>
+                {{/edit}}
+            </div>
+        </div>
+        <h3>Comments</h3>
+        {{# username}}
+        <form method="POST" action="/posts/{{post.post_id}}/add-comment" class="form" id="newCommentForm">
+            <div class="form">
+                <div class="form-item">
+                    <input type="text" name="title" placeholder="Comment Title" required>
+                </div>
+                <div class="form-item">
+                    <textarea name="text" form="newCommentForm" cols="30" rows="3" placeholder="Comment Body" required></textarea>
+                </div>
+            </div>
+            <button class="btn submit">Post Comment</button>
+        </form>
+        {{/ username }}
+        {{^ username }}
+            <p><i>Log in or Sign up to leave a comment.</i></p>
+        {{/ username}}
+        <div id="comments">
+            {{# post.comments }}
+                <div class="comment">
+                    <div class="title">
+                        <h4>{{commentUser}}</h4>
+                        <h5>{{commentTitle}}</h5>
+                    </div>
+                    <p class="text">{{commentText}}</p>
+                    {{# canDelete}}
+                        <form method="POST" action="/posts/{{post.post_id}}/{{commentId}}/delete" class="form">
+                            <button class="btn danger">Delete</button>
+                        </form>
+                    {{/ canDelete}}
+                </div>
+            {{/ post.comments }}
+            {{^ post.comments }}
+                <h3>No Comments</h3>
+            {{/ post.comments}}
+        </div>
+    </div>
+</body>
+</html>
